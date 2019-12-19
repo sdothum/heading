@@ -3,6 +3,11 @@
 " Heading
 " ══════════════════════════════════════════════════════════════════════════════
 
+let s:save_cpo = &cpo
+set cpo&vim
+if exists("g:loaded_heading") | finish | endif
+let g:loaded_heading = 1
+
 " Heading styles _______________________________________________________________
 
 " ....................................................................... Glyphs
@@ -67,5 +72,7 @@ command! Justify silent! call heading#Justify()
 
 execute 'imap <silent>' . s:leader[0] . '<Right>' '<C-o>:silent Justify<CR>'
 execute 'nmap <silent>' . s:leader[0] . '<Right>'      ':silent Justify<CR>'
+
+let &cpo = s:save_cpo
 
 " heading.vim
