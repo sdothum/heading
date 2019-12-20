@@ -13,7 +13,7 @@ endfunction
 " example: draw underline
 " ───────────────────────
 function! heading#Underline(delimiter)
-  if heading#NonBlankLine() | execute 'normal! yypwv$r' . a:delimiter | endif
+  if s:nonBlankLine() | execute 'normal! yypwv$r' . a:delimiter | endif
   normal! $
 endfunction
 
